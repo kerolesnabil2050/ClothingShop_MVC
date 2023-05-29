@@ -1,0 +1,211 @@
+﻿@model Project.ViewModels.SuplierRegisterViewModel
+
+@{
+    ViewData["Title"] = "supplier register";
+
+    Layout = null;
+}
+
+@*<h1>register</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="register" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adress" class="control-label"></label>
+                <input asp-for="Adress" class="form-control" />
+                <span asp-validation-for="Adress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassWord" class="control-label"></label>
+                <input asp-for="PassWord" class="form-control" />
+                <span asp-validation-for="PassWord" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword" class="control-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SSD" class="control-label"></label>
+                <input asp-for="SSD" class="form-control" />
+                <span asp-validation-for="SSD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Photo" class="control-label"></label>
+                <input type="file" asp-for="Photo" class="form-control" />
+                <span asp-validation-for="Photo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+*@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="vendor/nouislider/nouislider.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/css/styleG.css">
+</head>
+<body class="w-75">
+
+    <div class="main container w-75">
+
+        <div class="container w-75">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="/img/Log2.jpg" alt="">
+                    <div class="signup-img-content">
+                        <h2>Register now </h2>
+                        <p>while seats are available !</p>
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form class="register-form" asp-action="register" enctype="multipart/form-data" id="register-form" >
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label asp-for="FirstName"></label>
+                                    <input asp-for="FirstName" />
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                </div>
+                                <div class="form-input">
+                                    <label asp-for="LastName"></label>
+                                    <input asp-for="LastName" />
+                                    <span asp-validation-for="LastName" class="text-danger"></span>
+                                </div>
+                                <div class="form-input">
+                                    <label asp-for="PassWord"></label>
+                                    <input asp-for="PassWord" />
+                                    <span asp-validation-for="PassWord" class="text-danger"></span>
+                                </div>
+                                <div class="form-input">
+                                    <label asp-for="ConfirmPassword"></label>
+                                    <input asp-for="ConfirmPassword" />
+                                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+
+
+                                </div>
+                                <div class="form-input">
+                                    <label asp-for="Email"></label>
+                                    <input asp-for="Email" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+
+                                </div>
+
+                                <div class="form-input">
+                                    <label asp-for="PhoneNumber"></label>
+                                    <input asp-for="PhoneNumber" />
+                                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <label asp-for="Adress"></label>
+                                    <input asp-for="Adress" />
+                                    <span asp-validation-for="Adress" class="text-danger"></span>
+
+                                </div>
+
+
+                                <div class="form-input">
+                                    <label asp-for="SSD"></label>
+                                    <input asp-for="SSD">
+                                    <span asp-validation-for="SSD" class="text-danger"></span>
+                                </div>
+                                <div class="form-input">
+                                    <label asp-for="UserName"></label>
+                                    <input asp-for="UserName" id="demand">
+                                    <span asp-validation-for="UserName" class="text-danger"></span>
+
+                                </div>
+                              
+                                <div class="form-input">
+                                    <label asp-for="Photo"></label>
+                                    <input asp-for="Photo" type="file" id="blank_name" />
+                                    <span asp-validation-for="Photo" class="text-danger"></span>
+
+                                </div>
+                                <div class="form-input">
+                                    <label asp-for="Age"></label>
+                                    <input asp-for="Age" id="payable" />
+                                    <span asp-validation-for="Age" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-submit mt-5">
+                            <input type="submit" value="Submit" class="submit" id="submit" name="submit" style="background-color:black" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="/js/vendor/jquery/jquery.min.js"></script>
+    <script src="/js/vendor/nouislider/nouislider.min.js"></script>
+    <script src="/js/vendor/wnumb/wNumb.js"></script>
+
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+
+    <script src="/js/mainG.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

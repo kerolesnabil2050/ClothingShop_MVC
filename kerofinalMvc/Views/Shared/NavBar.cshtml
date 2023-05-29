@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Male-Fashion | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="/css/NewDesign/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/NewDesign/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/NewDesign/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/css/NewDesign/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="/css/NewDesign/NewJava/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/css/NewDesign/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/NewDesign/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/NewDesign/style.css" type="text/css">
+</head>
+
+<body>
+
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+    <!-- Header Section Begin -->
+    <header class="header">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <a href="./index.html"><img src="/img/logo.png" alt=""></a>
+                    </div>
+                </div>
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Customer"))
+                {
+                    <div class="col-lg-6 col-md-6">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li class="active"><a href="/Product/Index">Home</a></li>
+
+                                <li><a href="./shop.html">Women</a></li>
+                                <li><a href="./blog.html">Men</a></li>
+
+                                <li>
+                                    <a href="#">Pages</a>
+                                    <ul class="dropdown">
+                                        <li><a href="/Card/ShowAllProductInCart">Shopping Cart</a></li>
+                                        <li><a href="/Order/CheckOutt">Check Out</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="./contact.html">Contacts</a></li>
+
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3">
+                        <div class="header__nav__option">
+                            <a href="/CustomerActions/ShowProfile" style="color:black;opacity:0.8">@User.Identity.Name</a>
+
+                            <a href="/LoginAndSignOut/signOut"><img src="/img/logout.png" style="width:20px;height:20px" alt=""></a>
+                            <a href="/Card/ShowAllProductInCart"><img src="/img/cart.png" alt=""></a>
+
+                        </div>
+                    </div>
+                }
+                else if (User.Identity.IsAuthenticated && User.IsInRole("Supplier"))
+                {
+                    <div class="col-lg-6 col-md-6">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li class="active"><a href="/Supplier/GetAllProducts">Home</a></li>
+
+                                <li><a href="/Product/Add">Add Product</a></li>
+
+
+                                <li><a href="./contact.html">Contacts</a></li>
+
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3">
+                        <div class="header__nav__option">
+                            <a href="/Supplier/ShowProfile" style="color:black;opacity:0.6">Welcome  @User.Identity.Name</a>
+
+
+                            <a href="/LoginAndSignOut/signOut"><img src="/img/logout.png" style="width:20px;height:20px" alt=""></a>
+
+                        </div>
+                    </div>
+                }
+                else if (User.Identity.IsAuthenticated && User.IsInRole("Shipper"))
+                {
+                    <div class="col-lg-6 col-md-6">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li class="active"><a href="/Product/Index">Home</a></li>
+
+                                <li><a href="./shop.html">Show Orders</a></li>
+                                <li><a href="./blog.html">Confirm Order</a></li>
+
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3">
+                        <div class="header__nav__option">
+                            <a href="/Shiper/ShowProfile" style="color:black;opacity:0.6">@User.Identity.Name</a>
+
+                            <a href="/LoginAndSignOut/signOut"><img src="/img/logout.png" style="width:20px;height:20px" alt=""></a>
+                            <a href="/LoginAndSignOut/signOut"><img src="/img/logout.png" style="width:20px;height:20px" alt=""></a>
+
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-lg-6 col-md-6">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li class="active"><a href="/Product/Add">Home</a></li>
+
+                                <li><a href="/SupplierRegister/register">Selling</a></li>
+                                <li><a href="/ShipperRegister/Register">Shipping</a></li>
+
+                                <li>
+                                    <a href="#">Pages</a>
+                                    <ul class="dropdown">
+                                        <li><a href="./about.html">About Us</a></li>
+                                        <li><a href="./shop-details.html">Shop Details</a></li>
+                                        <li><a href="./shopping-cart.html">Shopping Cart</a></li>
+                                        <li><a href="./checkout.html">Check Out</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="./contact.html">Contacts</a></li>
+
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3">
+                        <div class="header__nav__option">
+                            <a href="/LoginAndSignOut/Login"><img src="/img/Login.png" style="width:20px;height:20px" alt=""></a>
+                            <a href="/Customer/Register"><img src="/img/reg.png" style="width:20px;height:20px" alt=""></a>
+                            <a href="/Card/ShowAllProductInCart"><img src="/img/cart.png" alt=""></a>
+
+
+                        </div>
+                    </div>
+                }
+
+            </div>
+            </div>
+           
+
+    </header>
+    
+    <script src="/js//NewJava/jquery-3.3.1.min.js"></script>
+    <script src="/js/NewJava/bootstrap.min.js"></script>
+    <script src="/js/NewJava/jquery.nice-select.min.js"></script>
+    <script src="/js/NewJava/jquery.nicescroll.min.js"></script>
+    <script src="/js/NewJava/jquery.magnific-popup.min.js"></script>
+    <script src="/js/NewJava/jquery.countdown.min.js"></script>
+    <script src="/js/NewJava/jquery.slicknav.js"></script>
+    <script src="/js/NewJava/mixitup.min.js"></script>
+    <script src="/js/NewJava/owl.carousel.min.js"></script>
+    <script src="/js/NewJava/main.js"></script>
+</body>
+</html>

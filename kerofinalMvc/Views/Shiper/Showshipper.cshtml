@@ -1,0 +1,79 @@
+﻿@model Shiper
+
+@{
+    Layout = "";
+    ViewData["Title"] = "showshipper";
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        /* Custom styles for this profile */
+        .profile-picture {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .profile-details {
+            margin-bottom: 30px;
+        }
+
+            .profile-details h2 {
+                margin-bottom: 10px;
+            }
+
+            .profile-details p {
+                margin-bottom: 5px;
+            }
+
+        .profile-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+            .profile-actions button {
+                margin-right: 10px;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="profile-picture" src="~/Fiels/imges/@Model.LicenseImg" alt="Profile picture">
+                <h2>@Model.ApplcationUser.UserName</h2>
+            </div>
+            <div class="col-md-8">
+                <div class="profile-details">
+                    <label>First Name :</label>
+                    <h2>@Model.ApplcationUser.FirstName</h2>
+                    <label>Last Name :</label>
+                    <h2>@Model.ApplcationUser.LastName</h2>
+                    <label>Email :</label>
+                    <p>@Model.ApplcationUser.Email</p>
+                    <label>Address :</label>
+                    <p>@Model.ApplcationUser.Address</p>
+                </div>
+                <div class="profile-actions">
+                    <a class="btn btn-primary" asp-action="Eidt">Edit Profile</a>
+                    <a class="btn btn-danger" asp-action="Delete">Delete Account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+

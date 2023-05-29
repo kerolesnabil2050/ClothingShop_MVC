@@ -1,0 +1,94 @@
+﻿@model Project.ViewModels.ProductSellerViewModel
+
+@{
+    ViewData["Title"] = "Add";
+    Layout = "_MyLayout";
+
+    SelectList categoryList = new SelectList(ViewBag.category, "Id", "Name");
+
+
+}
+
+<div class="container w-100 mt-3 mb-5">
+  <h4 style="color:#e53637;" class="border-bottom text-center font-weight-bolder">New <label style="font-display:swap;font-weight:lighter; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color:black;font-size:30px"> Product</label></h4>
+<div class="row container border-1 shadow-lg p-3 mt-4 bg-body rounded">
+
+        <form asp-action="Add" enctype="multipart/form-data" class="mt-3 w-100">
+            <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="row col-12 d-flex container justify-content-around flex-nowrap">
+    <div class="col-5">
+        
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Brand" class="control-label"></label>
+                <input asp-for="Brand" class="form-control" />
+                <span asp-validation-for="Brand" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Type" class="control-label"></label>
+                <input asp-for="Type" class="form-control" />
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+                <div class="form-group">
+                      <label asp-for="CategoryId" class="control-label"></label>
+                     <select asp-for="CategoryId" class="form-control" asp-items="categoryList"></select>
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-5">
+               
+
+                <div class="form-group mt-3">
+                        <label asp-for="Quntity" class="control-label"></label>
+                        <input asp-for="Quntity" class="form-control" />
+                    <span asp-validation-for="Quntity" class="text-danger"></span>
+                </div>
+            <div class="form-group">
+                <label asp-for="Color" class="control-label"></label>
+                <input asp-for="Color" class="form-control" />
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Size" class="control-label"></label>
+                <input asp-for="Size" class="form-control" />
+                <span asp-validation-for="Size" class="text-danger"></span>
+            </div>
+              <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Photo" class="control-label"></label>
+                <input type="file" asp-for="Photo" class="form-control" />
+                <span asp-validation-for="Photo" class="text-danger"></span>
+            </div>
+           
+            </div>
+    </div>
+      <div class="col-1"></div>
+
+
+            <div class="form-group text-center mt-5 mb-0">
+                <input type="submit" value="Add" class="btn mx-5 btn-danger w-25" style="text-align:center" />
+                <a asp-action="GetAllProducts" asp-asp-controller="Supplier" class="btn btn-dark w-25">Back to List</a>
+
+            </div>
+        </form>
+
+</div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

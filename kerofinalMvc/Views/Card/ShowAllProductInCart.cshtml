@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Project.Models.CustomerProduct>
+
+@{
+    ViewData["Title"] = "ShowAllProductInCart";
+}
+<head>
+    <style>
+        .Back:hover {
+            background-color: #e53637;
+
+        }
+
+        #Det:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+<h2 class="text-center my-5">Shopping Cart</h2>
+
+<div class="container border-1">
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdectSeller.Img)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdectSeller.Prodect.Name)
+            </th>
+         
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdectSeller.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubTotal)
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+              <img src="~/Fiels/imges/@item.ProdectSeller.Img" width="150px" height="100px">
+            </td>
+            <td>
+                 @Html.DisplayFor(modelItem => item.ProdectSeller.Prodect.Name)
+
+            </td>
+           
+          
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdectSeller.Price)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubTotal)
+                </td>
+            <td>
+
+                        <a class="btn" id="Det" style="background-color:#e53637;color:white" href="/Product/GETSpecificItem/@item.ProdectSeller.ProdectId">Details</a>
+                        |  <a class="btn Back" id="Del" style="background-color:black;color:white" href="/Card/DeleteProductFromCard/@item.ProdectSellerId">Delete</a>
+
+                  @*  @Html.ActionLink("Details", "GETSpecificItem","Product", new { id=item.ProdectSeller.ProdectId }) |
+                        @Html.ActionLink("Delete", "DeleteProductFromCard","Card", new { id=item.ProdectSellerId})
+  *@          </td>
+        </tr>
+}
+    </tbody>
+</table>
+    <div class="my-5">
+        <a class="btn Back" style="background-color:black;color:white" href="/Order/CheckOutt">Checkout</a>
+    </div>
+
+   </div>

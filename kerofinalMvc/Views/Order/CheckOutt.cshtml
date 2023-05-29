@@ -1,0 +1,141 @@
+﻿@model IEnumerable<Project.Models.CustomerProduct>
+
+@{
+    ViewData["Title"] = "CheckOutt";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+
+    <title>Document</title>
+    <style>
+        strong {
+            color: black;
+        }
+
+        em {
+            color: black;
+        }
+    </style>
+</head>
+<body style="margin-top: 20px;">
+
+    <!------ Include the above in your HEAD tag ---------->
+
+    <div class="container" style="margin-left:90px">
+        <div class="container">
+        <div class="row container">
+
+            <div class="well col-xs-9 col-sm-9 col-md-9 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div>
+                            <strong>E Shopper</strong>
+                            <br>
+                            Welcome You
+                            <br>
+                            Your Place Your Store
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                        <p style="color:black;">
+                            <em>Date:</em>
+                            <em>@ViewBag.Date</em>
+                        </p>
+                        <p style="color:black;">
+                            <em>Receipt : <label style="font-size:16px;color:#e53637">@User.Identity.Name</label></em>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="text-center">
+                        <h3 class="text-center">Receipt</h3>
+                    </div>
+                    <table class="table table-hover">
+                        <thead>
+
+                            <tr>
+                                <th style="width:40%">Product</th>
+                                <th class="text-center" style="width:20%">Qunatity</th>
+                                <th class="text-center" style="width:20%">Price</th>
+                                <th class="text-center" style="width:20%">Total</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            @{
+                                decimal sum = 0;
+                            }
+                            @foreach (CustomerProduct item in Model)
+                            {
+                                sum += @item.SubTotal;
+                                <tr>
+                                    <td ><h5>@item.ProdectSeller.Prodect.Name</h5></td>
+                                    <td style="text-align: center"> @item.Quantity </td>
+                                    <td class="text-center">@item.ProdectSeller.Price</td>
+                                    <td class="text-center">@item.SubTotal</td>
+                                </tr>
+
+                            }
+
+                            <tr>
+                                <td>   </td>
+                                <td>   </td>
+                                <td class="text-right" style="color:black;">
+                                    <p>
+                                        <strong>Subtotal: </strong>
+                                    </p>
+                                    <p>
+                                        <strong>Tax: </strong>
+                                    </p>
+                                </td>
+                                <td class="text-center">
+                                    <p>
+                                        <strong style="color:black;">@sum Ps</strong>
+                                    </p>
+                                    <p>
+                                        <strong style="color:black;">50Ps</strong>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>   </td>
+                                <td>   </td>
+                                <td class="text-right"><h4><strong>Total: </strong></h4></td>
+                                <td class="text-center text-danger"><h4><strong style="color:#e53637;">@sum Ps</strong></h4></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-center">
+                            <a href="/Order/PAyment" class="btn btn-success mr-3 w-25 font-weight-bold" style="font-size:16px">
+                        Pay Now   
+                    </a>
+                    <a href="/Card/ShowAllProductInCart" class="btn btn-danger mr-3 w-25" style="font-size:16px">
+                        Go T Cart
+                    </a>
+                        <a type="button" href="/Order/CancelOrder" class="btn btn-dark mr-3 w-25" style="font-size:16px">
+                        Cancel Order
+                    </a>
+                </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,201 @@
+﻿@model Project.ViewModels.ShiperViewModel
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = null;
+}
+
+@*<h1>Register</h1>
+
+<h4>ShiperViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Register" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SSD" class="control-label"></label>
+                <input  asp-for="SSD" class="form-control" />
+                <span asp-validation-for="SSD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Photo" class="control-label"></label>
+                <input type="file"  asp-for="Photo" class="form-control" />
+                <span asp-validation-for="Photo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassWord" class="control-label"></label>
+                <input asp-for="PassWord" class="form-control" />
+                <span asp-validation-for="PassWord" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassWord" class="control-label"></label>
+                <input asp-for="ConfirmPassWord" class="form-control" />
+                <span asp-validation-for="ConfirmPassWord" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="vendor/nouislider/nouislider.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/css/styleG.css">
+</head>
+<body>
+
+    <div class="main w-75">
+
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="/img/Log2.jpg" alt="">
+                    <div class="signup-img-content">
+                        <h2>Register now </h2>
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form class="register-form" asp-action="Register" id="register-form" enctype="multipart/form-data">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label asp-for="FirstName"></label>
+                                    <input asp-for="FirstName" />
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+
+                                </div>
+                                <div class="form-input">
+                                    <label asp-for="LastName"></label>
+                                    <input asp-for="LastName" />
+                                    <span asp-validation-for="LastName" class="text-danger"></span>
+
+                                </div>
+                                <div class="form-input">
+                                    <label asp-for="PassWord"></label>
+                                    <input asp-for="PassWord" />
+                                    <span asp-validation-for="PassWord" class="text-danger"></span>
+                                </div>
+                                <div class="form-input">
+                                    <label asp-for="ConfirmPassWord"></label>
+                                    <input asp-for="ConfirmPassWord" />
+                                    <span asp-validation-for="ConfirmPassWord" class="text-danger"></span>
+
+
+                                </div>
+                                <div class="form-input">
+                                    <label asp-for="Photo"></label>
+                                    <input  type ="file" asp-for="Photo" />
+                                    <span asp-validation-for="Photo" class="text-danger"></span>
+
+                                </div>
+
+                                @*   <div class="form-input">
+                                <label asp-for="UserName"></label>
+                                <input asp-for="UserName" />
+                                <span asp-validation-for="UserName" class="text-danger"></span>
+
+                                </div>*@
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <label asp-for="Address"></label>
+                                    <input asp-for="Address" />
+                                    <span asp-validation-for="Address" class="text-danger"></span>
+
+                                </div>
+
+
+                                <div class="form-input">
+                                    <label asp-for="SSD"></label>
+                                    <input asp-for="SSD">
+                                    <span asp-validation-for="SSD" class="text-danger"></span>
+                                </div>
+                                <div class="form-input">
+                                    <label asp-for="UserName"></label>
+                                    <input asp-for="UserName" id="demand">
+                                    <span asp-validation-for="UserName" class="text-danger"></span>
+
+                                </div>
+                                @* <div class="form-input">
+                                <label for="chequeno">DD / Cheque No.</label>
+                                <input type="text" name="chequeno" id="chequeno" />
+                                </div>*@
+                                @*<div class="form-input">
+                                    <label asp-for="LicenseImg"></label>
+                                    <input asp-for="LicenseImg" type="file" id="blank_name" />
+                                    <span asp-validation-for="LicenseImg" class="text-danger"></span>
+                                </div>*@
+                                <div class="form-input">
+                                    <label asp-for="Age"></label>
+                                    <input asp-for="Age" id="payable" />
+                                    <span asp-validation-for="Age" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-submit mt-5">
+                            <input type="submit" value="Submit" class="submit" id="submit" name="submit" style="background-color:black" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="/js/vendor/jquery/jquery.min.js"></script>
+    <script src="/js/vendor/nouislider/nouislider.min.js"></script>
+    <script src="/js/vendor/wnumb/wNumb.js"></script>
+
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+
+    <script src="/js/mainG.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+

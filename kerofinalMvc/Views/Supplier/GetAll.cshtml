@@ -1,0 +1,104 @@
+﻿@model IEnumerable<Project.Models.Seller>
+
+@{
+    ViewData["Title"] = "GetAll";
+    Layout = "_HomeLayout";
+}
+
+<div class="container m-3">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ApplcationUser.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.blance)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SSD)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Img)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.status)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsDelete)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplcationUser.FirstName)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.blance)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SSD)
+                    </td>
+                    <td>
+                        <img src="~/Fiels/imges/@item.Img" width="100" height="100">
+                    </td>
+                    @if (@item.status == false)
+                    {
+                        <td>
+                            <a href="/Supplier/changestate/@item.ApplcationUserId" class="btn btn-danger"> accept supplier</a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <a class="btn btn-success">accepted</a>
+                        </td>
+
+                    }
+                    @if (@item.IsDelete == false)
+                    {
+                        <td>
+                            <a href="/Supplier/deletestate/@item.ApplcationUserId" class="btn btn-success">blocked </a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <a href="/Supplier/ReturnSupplier/@item.ApplcationUserId" class="btn btn-danger">unblocked</a>
+                        </td>
+
+                    }
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.4/signalr.min.js" integrity="sha512-ulHhwQdGlX96gNSRsakG06STFdaQBUTbCX4KqLcYI428blEsttMkg2C3n2KtiYNDwnETBHXDg9ZAtvkfMHTYOQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var hub =
+            new signalR.HubConnectionBuilder().withUrl("SupplierHub").build();
+        hub.start().then(function () {
+            console.log("Connection Success");
+        });
+                        //hub.on("NewSupplierRegister", function (productObj) {
+
+                        //    console.log(productObj);
+                        //    $("#newPro").append("Id :" + productObj.id + "<br/> name : " + productObj.name);
+                        //});
+
+    </script>
+}

@@ -1,0 +1,58 @@
+﻿@model Shiper
+
+@{
+    Layout = "_MyLayout";
+    ViewData["Title"] = "ShowProfile";
+
+    // ViewBag["title"] = "CustomerProfile";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/css/EditProfile.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div style="background-image:url(/img/back.jpg);background-repeat:no-repeat;background-position:center;
+               background-size:cover;border-radius:10px;
+               " class="container w-50 opacity-75">
+        <div class="container my-5 mb-4 p-3 d-flex justify-content-center w-75 shadow-lg">
+            <div class="card p-4 shadow-lg p-3 mb-5 bg-body rounded">
+
+                <div class=" image d-flex flex-column justify-content-center align-items-center">
+
+                    <img src="~/Fiels/imges/@Model.LicenseImg" height="150" width="150" class="rounded-circle my-4" />
+                    <label class="name mt-3">@Model.ApplcationUser.UserName</label>
+                    <label class="idd"><span>@Model.ApplcationUser.FirstName </span> @Model.ApplcationUser.LastName</label>
+                    <div class="d-flex flex-row justify-content-center align-items-center gap-2">
+                        <label class="idd1">@Model.ApplcationUser.Email</label> <span>
+                        </span>
+                    </div>
+                    <div class="d-flex flex-row justify-content-center align-items-center mt-3">
+                        <label class="number">@Model.ApplcationUser.Address <label class="follow">Country</label></label>
+                    </div>
+                    <div class=" d-flex mt-2">
+                        <button class="btn1 btn-danger" style="background-color:#e53637;">Edit Profile</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
